@@ -1,7 +1,7 @@
 // Spring Boot API base URL.
 // For local development, keep this as http://localhost:8080.
 // When deployed, replace it with your backend URL, e.g. https://your-api.onrender.com
-const API_BASE = "https://studentmanagementspringboot-production.up.railway.app";
+const API_BASE = "https://studentmanagementspringboot-production-b80f.up.railway.app/";
 const API = `${API_BASE}/api/School`;
 
 let students = [];
