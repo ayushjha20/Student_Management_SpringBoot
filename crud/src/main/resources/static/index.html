@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SchoolHub | Student Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">S</span><div><strong>SchoolHub</strong><small>Student Management</small></div></div>
+    <span class="api-status" id="apiStatus"><i></i> API checking...</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">SCHOOL MANAGEMENT</p>
+        <h1>Manage students.<br><span>Keep it simple.</span></h1>
+        <p class="hero-text">Create, view, update and remove student records through your Spring Boot REST API.</p>
+      </div>
+      <div class="hero-card"><div class="hero-icon">🎓</div><strong id="studentCount">0</strong><span>students in your system</span></div>
+    </section>
+
+    <section class="grid">
+      <div class="panel form-panel">
+        <div class="panel-head"><div><p class="section-label" id="formMode">ADD STUDENT</p><h2 id="formTitle">Create a student</h2></div><button class="ghost-btn hidden" id="cancelEdit">Cancel edit</button></div>
+        <form id="studentForm">
+          <input type="hidden" id="studentId" />
+          <label>Name<input id="name" name="name" type="text" placeholder="e.g. Ayush Jha" required /></label>
+          <div class="two-col">
+            <label>Roll No.<input id="rollNo" name="Roll_No" type="number" min="1" placeholder="101" required /></label>
+            <label>Marks<input id="marks" name="marks" type="text" placeholder="85" required /></label>
+          </div>
+          <label>Course<input id="course" name="Course" type="text" placeholder="Computer Science" required /></label>
+          <button class="primary-btn" type="submit" id="submitBtn"><span>＋</span> Add Student</button>
+        </form>
+        <p class="message" id="formMessage"></p>
+      </div>
+
+      <div class="panel table-panel">
+        <div class="panel-head"><div><p class="section-label">STUDENT DIRECTORY</p><h2>All students</h2></div><button class="refresh-btn" id="refreshBtn">↻ Refresh</button></div>
+        <div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search by name, course or roll no..." /></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Student</th><th>Roll No.</th><th>Course</th><th>Marks</th><th>Actions</th></tr></thead>
+            <tbody id="studentTable"><tr><td colspan="5" class="empty">Loading students...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
