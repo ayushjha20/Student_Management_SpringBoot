@@ -1,10 +1,7 @@
-// Spring Boot API base URL.
-// For local development, keep this as http://localhost:8080.
-// When deployed, replace it with your backend URL, e.g. https://your-api.onrender.com
-const API_BASE = " ";
+// Empty means the API is served by this same Spring Boot application.
+// This works locally and after deployment without a hard-coded host name.
+const API_BASE = "";
 const API = `${API_BASE}/api/School`;
-
-// const API = "https://studentmanagementspringboot-production-b80f.up.railway.app/";
 
 let students = [];
 
